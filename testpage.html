@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="https://unpkg.com/pagedjs/dist/paged.polyfill.js"></script>
+
+  <style>
+    .page-number::before {
+      content : counter(page);
+    }
+    .page-total::before {
+      content : counter(pages);
+    }
+
+    @page {
+      margin:10mm;
+    }
+
+    .header,
+.header-space {
+  height: 85px;
+}
+.header {
+  position: fixed;
+  top: 0;
+  margin:10mm;
+}
+  </style>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Initialize paged.js after reapplying styles
+        PagedPolyfill.preview().then(() => {
+          window.focus();
+          window.print();
+        });
+      });
+  </script>
+</head>
+<body>
+  <div id="print">
+    <table class="w-full relative-position">
+      <thead>
+        <tr>
+          <td>
+            <div class="header-space">&nbsp;</div>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <table class="border-collapse border border-black table-auto w-full mb-5">
+                <thead>
+                  <tr class="text-left">
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90">PCODE</th>
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90">Nama Barang</th>
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90">Shipment</th>
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90">Received</th>
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90 text-right">
+                      Price
+                    </th>
+                    <th class="px-2 border border-slate-300 text-[8px] font-medium text-neutral-90 text-right">
+                      Subtotal
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                  <tr>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">1</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Nama Barang</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Shipment</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Received</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Price</td>
+                    <td class="px-2 border border-slate-300 text-[8px] font-normal text-neutral-80">Subtotal</td>
+                  </tr>
+                </tbody>
+              </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="flex flex-col header mb-2 gap-y-2">
+      <div class="flex justify-between text-[8px]">
+        <div class="sideleft w-[70%]">
+          <div class="font-medium text-neutral-90 text-[10px]">PT SINARMAS DISTRIBUSI NUSANTARA WONOSARI</div>
+          <div class="text-neutral-90">
+            JL RAYA WONOSARI SEMANU NO 52 SAMBIREJO JL RAYA WONOSARI SEMANU NO 52 SAMBIREJO KEC SEMANU KABUPATEN GUNUNG
+            KIDUL DAERAH ISTIMEWA YOGYAKARTA 55893 WONOSARI
+          </div>
+          <table>
+            <tr>
+              <td>NPWP</td>
+              <td><span class="mx-1">:</span> 01.604.506.4-007.000</td>
+            </tr>
+            <tr>
+              <td>Telp</td>
+              <td><span class="mx-1">:</span> 087883332500</td>
+            </tr>
+          </table>
+        </div>
+        <div class="sideright w-[30%] text-right">
+          <div class="flex gap-x-1 justify-end">
+            <div class="text-neutral-90">Hal:</div>
+            <span class="page-number text-neutral-90"></span>
+          <div class="text-neutral-90">/</div>
+          <span class="page-total text-neutral-90"></span>
+          </div>
+          <div class="text-neutral-90">tgl /Adm1</div>
+        </div>
+      </div>
+
+    </div>   
+    </div>
+</body>
+</html>
